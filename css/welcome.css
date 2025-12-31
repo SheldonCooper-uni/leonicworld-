@@ -1,86 +1,262 @@
-/* Welcome Animation Styles */
+/* ============================================
+   STARFIELD LOADER - Leonic's World
+   ============================================
 
-/* Welcome Overlay */
-.welcome-overlay {
+   Ein eleganter, cinematischer Loader mit:
+   - Sternenfeld-Canvas-Hintergrund
+   - Orbit-Animation mit Komet um das "LW" Logo
+   - Konstellationslinien die das Logo andeuten
+   - Smooth fade-out transition
+
+   ============================================ */
+
+/* ====== LOADER OVERLAY ====== */
+.loader-overlay {
   position: fixed;
   inset: 0;
-  background: #000000;
+  background: var(--bg-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: var(--z-welcome);
+  z-index: var(--z-loader);
   opacity: 1;
-  transition: opacity 0.7s ease;
+  visibility: visible;
+  transition: opacity 400ms ease, visibility 400ms ease;
 }
 
-.welcome-overlay.fade-out {
+.loader-overlay.fade-out {
   opacity: 0;
+  visibility: hidden;
+}
+
+.loader-overlay.hidden {
+  display: none;
+}
+
+/* ====== STARFIELD CANVAS ====== */
+.loader-starfield {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
 }
 
-/* Welcome Content */
-.welcome-content {
-  text-align: center;
-  padding: var(--space-xl);
+/* ====== LOADER CONTENT ====== */
+.loader-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
-/* Pre Text - "Welcome to" */
-.welcome-pre {
-  font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 3vw, 2rem);
-  font-weight: var(--fw-light);
-  color: var(--text-secondary);
+/* ====== ORBIT CONTAINER ====== */
+.loader-orbit {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orbit-Ring (subtil) */
+.loader-orbit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(196, 120, 92, 0.1);
+  border-radius: 50%;
   opacity: 0;
-  transform: translateY(20px);
-  margin-bottom: var(--space-md);
+  animation: orbitRingFadeIn 0.6s ease 0.3s forwards;
 }
 
-.welcome-pre.animate {
-  animation: welcomePreFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+@keyframes orbitRingFadeIn {
+  to { opacity: 1; }
 }
 
-@keyframes welcomePreFadeIn {
+/* ====== LOGO (LW) ====== */
+.loader-logo {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: var(--fw-light);
+  color: var(--text-primary);
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: logoReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+@keyframes logoReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ====== COMET ====== */
+.loader-comet {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  box-shadow:
+    0 0 10px var(--accent-primary),
+    0 0 20px var(--accent-primary-light),
+    0 0 30px rgba(196, 120, 92, 0.4);
+  opacity: 0;
+  animation:
+    cometFadeIn 0.3s ease 0.5s forwards,
+    cometOrbit 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+  transform-origin: center center;
+}
+
+/* Comet Schweif */
+.loader-comet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(
+    to left,
+    var(--accent-primary-light),
+    transparent
+  );
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+@keyframes cometFadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes cometOrbit {
+  0% {
+    transform: rotate(0deg) translateX(90px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(90px) rotate(-360deg);
+  }
+}
+
+/* ====== KONSTELLATIONSLINIEN ====== */
+.loader-constellation {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  animation: constellationReveal 0.6s ease 1.2s forwards;
+}
+
+@keyframes constellationReveal {
+  to { opacity: 1; }
+}
+
+.constellation-line {
+  position: absolute;
+  background: rgba(196, 120, 92, 0.3);
+  transform-origin: left center;
+}
+
+/* L-Form */
+.constellation-line--l1 {
+  top: 50%;
+  left: 35%;
+  width: 0;
+  height: 1px;
+  animation: lineGrow 0.3s ease 1.3s forwards;
+}
+
+.constellation-line--l2 {
+  top: 35%;
+  left: 35%;
+  width: 1px;
+  height: 0;
+  animation: lineGrowVertical 0.3s ease 1.4s forwards;
+}
+
+/* W-Form (vereinfacht als V) */
+.constellation-line--w1 {
+  top: 50%;
+  left: 55%;
+  width: 0;
+  height: 1px;
+  transform: rotate(30deg);
+  animation: lineGrow 0.3s ease 1.5s forwards;
+}
+
+.constellation-line--w2 {
+  top: 50%;
+  left: 62%;
+  width: 0;
+  height: 1px;
+  transform: rotate(-30deg);
+  animation: lineGrow 0.3s ease 1.6s forwards;
+}
+
+@keyframes lineGrow {
+  to { width: 20px; }
+}
+
+@keyframes lineGrowVertical {
+  to { height: 30px; }
+}
+
+/* Konstellationspunkte */
+.constellation-dot {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--accent-primary-light);
+  border-radius: 50%;
+  opacity: 0;
+  animation: dotReveal 0.3s ease forwards;
+}
+
+.constellation-dot:nth-child(1) { top: 35%; left: 35%; animation-delay: 1.3s; }
+.constellation-dot:nth-child(2) { top: 50%; left: 35%; animation-delay: 1.4s; }
+.constellation-dot:nth-child(3) { top: 50%; left: 45%; animation-delay: 1.45s; }
+.constellation-dot:nth-child(4) { top: 35%; left: 55%; animation-delay: 1.5s; }
+.constellation-dot:nth-child(5) { top: 55%; left: 62%; animation-delay: 1.55s; }
+.constellation-dot:nth-child(6) { top: 35%; left: 68%; animation-delay: 1.6s; }
+
+@keyframes dotReveal {
+  to {
+    opacity: 1;
+    box-shadow: 0 0 6px var(--accent-primary-light);
+  }
+}
+
+/* ====== BRAND TEXT ====== */
+.loader-brand {
+  margin-top: var(--space-xl);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: brandReveal 0.6s ease 0.8s forwards;
+}
+
+@keyframes brandReveal {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Main Title - "Leonic's World" */
-.welcome-title {
+.loader-brand-text {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 5rem);
-  font-weight: var(--fw-bold);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0;
-  transform: scale(0.9);
-  filter: blur(5px);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-light);
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
 
-.welcome-title.animate {
-  animation:
-    welcomeTitleFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards,
-    textGlowPulse 1s ease-in-out 0.8s 2;
-}
-
-@keyframes welcomeTitleFadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-  }
-}
-
-/* Glitch Effect */
-.welcome-title.glitch {
-  animation: glitch 0.15s ease 1;
-}
-
-/* Skip Button */
-.skip-btn {
+/* ====== SKIP BUTTON ====== */
+.loader-skip {
   position: absolute;
   bottom: var(--space-xl);
   right: var(--space-xl);
@@ -89,9 +265,7 @@
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
   color: var(--text-muted);
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
   border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -102,90 +276,134 @@
     transform 0.3s ease,
     color var(--transition-fast),
     border-color var(--transition-fast);
+  animation: skipReveal 0.4s ease 1s forwards;
 }
 
-.skip-btn.visible {
-  opacity: 1;
-  transform: translateY(0);
+@keyframes skipReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.skip-btn:hover {
+.loader-skip:hover {
   color: var(--text-primary);
-  border-color: var(--accent-purple);
+  border-color: var(--accent-primary);
 }
 
-/* Progress Bar (optional) */
-.welcome-progress {
+.loader-skip:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ====== PROGRESS INDICATOR ====== */
+.loader-progress {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
   background: var(--gradient-primary);
   width: 0;
-  transition: width 3.5s linear;
+  transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.welcome-progress.animate {
+.loader-progress.active {
   width: 100%;
 }
 
-/* Particles Background (optional enhancement) */
-.welcome-particles {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
+/* ====== REDUCED MOTION ====== */
+@media (prefers-reduced-motion: reduce) {
+  .loader-overlay {
+    transition-duration: 100ms;
+  }
+
+  .loader-logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .loader-comet {
+    display: none;
+  }
+
+  .loader-constellation,
+  .constellation-line,
+  .constellation-dot {
+    display: none;
+  }
+
+  .loader-brand {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .loader-skip {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .loader-orbit::before {
+    animation: none;
+    opacity: 1;
+  }
 }
 
-.welcome-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--accent-purple);
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: floatParticle 10s infinite ease-in-out;
-}
-
-@keyframes floatParticle {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-    opacity: 0.3;
-  }
-  25% {
-    transform: translate(50px, -100px) scale(1.5);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(-30px, -200px) scale(1);
-    opacity: 0.3;
-  }
-  75% {
-    transform: translate(40px, -150px) scale(1.2);
-    opacity: 0.5;
-  }
-}
-
-/* Responsive adjustments */
+/* ====== RESPONSIVE ====== */
 @media (max-width: 768px) {
-  .skip-btn {
+  .loader-orbit {
+    width: 140px;
+    height: 140px;
+  }
+
+  .loader-logo {
+    font-size: 2.5rem;
+  }
+
+  .loader-comet {
+    width: 6px;
+    height: 6px;
+  }
+
+  @keyframes cometOrbit {
+    0% {
+      transform: rotate(0deg) translateX(70px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+  }
+
+  .loader-skip {
     bottom: var(--space-lg);
     right: var(--space-lg);
     padding: var(--space-xs) var(--space-md);
   }
-
-  .welcome-title {
-    font-size: clamp(2rem, 10vw, 3.5rem);
-  }
-
-  .welcome-pre {
-    font-size: clamp(1rem, 4vw, 1.5rem);
-  }
 }
 
 @media (max-width: 480px) {
-  .skip-btn {
-    bottom: var(--space-md);
-    right: var(--space-md);
+  .loader-orbit {
+    width: 120px;
+    height: 120px;
+  }
+
+  .loader-logo {
+    font-size: 2rem;
+  }
+
+  @keyframes cometOrbit {
+    0% {
+      transform: rotate(0deg) translateX(60px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(60px) rotate(-360deg);
+    }
+  }
+
+  .loader-brand-text {
+    font-size: var(--fs-small);
+    letter-spacing: 0.2em;
   }
 }

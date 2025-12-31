@@ -1,57 +1,92 @@
 /**
- * Welcome Animation
- * Handles the intro animation sequence when the page loads
+ * ============================================
+ * STARFIELD LOADER - Leonic's World
+ * ============================================
+ *
+ * Features:
+ * - Canvas-basiertes Sternenfeld
+ * - Komet-Animation um das Logo
+ * - Graceful fallback nach 2.5s
+ * - Respects prefers-reduced-motion
+ * - Reagiert auf window.load (Bilder/Fonts)
+ *
+ * ============================================
  */
 
-class WelcomeAnimation {
+class StarfieldLoader {
   constructor() {
-    this.overlay = document.getElementById('welcome-overlay');
-    this.preText = document.querySelector('.welcome-pre');
-    this.title = document.querySelector('.welcome-title');
-    this.skipBtn = document.querySelector('.skip-btn');
-    this.progress = document.querySelector('.welcome-progress');
+    this.overlay = document.getElementById('loader-overlay');
+    this.canvas = document.getElementById('loader-starfield');
+    this.skipBtn = document.querySelector('.loader-skip');
+    this.progress = document.querySelector('.loader-progress');
 
-    this.totalDuration = 3500; // 3.5 seconds
-    this.hasSkipped = false;
-    this.animationComplete = false;
+    // Konfiguration
+    this.config = {
+      maxDuration: 2500,        // Graceful fallback nach 2.5s
+      minDisplayTime: 800,      // Mindestanzeigezeit für gute UX
+      fadeOutDuration: 400,     // Fade-out Zeit
+      starCount: 100,           // Anzahl der Sterne
+      starSpeed: 0.3            // Sternengeschwindigkeit
+    };
+
+    this.state = {
+      isComplete: false,
+      isSkipped: false,
+      resourcesLoaded: false,
+      startTime: Date.now()
+    };
+
+    this.stars = [];
+    this.animationId = null;
 
     this.init();
   }
 
+  /**
+   * Initialisierung
+   */
   init() {
-    // Check if we should skip the animation
-    if (this.shouldSkipAnimation()) {
+    // Früher Exit wenn kein Loader vorhanden
+    if (!this.overlay) return;
+
+    // Check ob Animation übersprungen werden soll
+    if (this.shouldSkip()) {
       this.skipImmediately();
       return;
     }
 
-    // Prevent scrolling during animation
-    document.body.classList.add('welcome-active');
+    // Body-Klasse setzen
+    document.body.classList.add('loader-active');
 
-    // Start animation sequence
-    this.startAnimation();
-
-    // Setup skip button
-    this.setupSkipButton();
-  }
-
-  shouldSkipAnimation() {
-    // Check localStorage for skip preference (24 hour expiry)
-    const skipData = utils.storage.get('welcomeSkipped');
-    if (skipData) {
-      const now = Date.now();
-      const expires = skipData.expires || 0;
-      if (now < expires) {
-        return true;
-      }
+    // Starfield initialisieren (nur wenn kein reduced-motion)
+    if (!this.prefersReducedMotion()) {
+      this.initStarfield();
     }
 
-    // Check for reduced motion preference
-    if (utils.prefersReducedMotion()) {
+    // Event Listeners
+    this.setupEventListeners();
+
+    // Progress starten
+    this.startProgress();
+
+    // Fallback Timer
+    this.setupFallbackTimer();
+
+    // Auf Ressourcen warten
+    this.waitForResources();
+  }
+
+  /**
+   * Prüft ob Animation übersprungen werden soll
+   */
+  shouldSkip() {
+    // Session-basierter Skip (für schnelle Navigationen)
+    const skipData = sessionStorage.getItem('loaderShown');
+    if (skipData) {
       return true;
     }
 
-    // Check URL parameter
+    // URL Parameter
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('skip') === 'true') {
       return true;
@@ -60,133 +95,263 @@ class WelcomeAnimation {
     return false;
   }
 
+  /**
+   * Prüft ob reduced-motion bevorzugt wird
+   */
+  prefersReducedMotion() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  /**
+   * Sofortiger Skip (ohne Animation)
+   */
   skipImmediately() {
     if (this.overlay) {
       this.overlay.remove();
     }
-    document.body.classList.remove('welcome-active');
-    this.revealMainContent();
+    document.body.classList.remove('loader-active');
+    this.revealContent();
   }
 
-  async startAnimation() {
-    // Start progress bar if exists
-    if (this.progress) {
-      this.progress.classList.add('animate');
-    }
+  /**
+   * Starfield Canvas initialisieren
+   */
+  initStarfield() {
+    if (!this.canvas) return;
 
-    // Timeline:
-    // 0s - 0.8s: "Welcome to" fades in
-    // 0.5s - 1.3s: "Leonic's World" appears
-    // 1.5s: Optional glitch effect
-    // 2.8s - 3.5s: Fade out overlay
+    const ctx = this.canvas.getContext('2d');
+    if (!ctx) return;
 
-    try {
-      // Step 1: Fade in pre-text (0s)
-      await utils.wait(100);
-      if (this.hasSkipped) return;
-      this.preText?.classList.add('animate');
+    // Canvas Größe
+    this.resizeCanvas();
 
-      // Step 2: Fade in title (0.5s)
-      await utils.wait(400);
-      if (this.hasSkipped) return;
-      this.title?.classList.add('animate');
+    // Sterne generieren
+    this.generateStars();
 
-      // Step 3: Show skip button (1s)
-      await utils.wait(500);
-      if (this.hasSkipped) return;
-      this.skipBtn?.classList.add('visible');
+    // Animation starten
+    this.animateStarfield(ctx);
 
-      // Step 4: Glitch effect (1.5s)
-      await utils.wait(500);
-      if (this.hasSkipped) return;
-      this.triggerGlitch();
+    // Resize Handler
+    window.addEventListener('resize', () => this.resizeCanvas());
+  }
 
-      // Step 5: Wait for text to be read (until 2.8s)
-      await utils.wait(1300);
-      if (this.hasSkipped) return;
+  /**
+   * Canvas Größe anpassen
+   */
+  resizeCanvas() {
+    if (!this.canvas) return;
 
-      // Step 6: Fade out (2.8s - 3.5s)
-      this.fadeOut();
+    const dpr = window.devicePixelRatio || 1;
+    this.canvas.width = window.innerWidth * dpr;
+    this.canvas.height = window.innerHeight * dpr;
 
-    } catch (error) {
-      console.error('Welcome animation error:', error);
-      this.fadeOut();
+    const ctx = this.canvas.getContext('2d');
+    if (ctx) {
+      ctx.scale(dpr, dpr);
     }
   }
 
-  triggerGlitch() {
-    if (this.title && !utils.prefersReducedMotion()) {
-      this.title.classList.add('glitch');
-      setTimeout(() => {
-        this.title.classList.remove('glitch');
-      }, 150);
+  /**
+   * Sterne generieren
+   */
+  generateStars() {
+    this.stars = [];
+    for (let i = 0; i < this.config.starCount; i++) {
+      this.stars.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 1.5 + 0.5,
+        opacity: Math.random() * 0.6 + 0.2,
+        twinkleSpeed: Math.random() * 0.02 + 0.01,
+        twinkleOffset: Math.random() * Math.PI * 2
+      });
     }
   }
 
-  fadeOut() {
-    if (this.hasSkipped || this.animationComplete) return;
-    this.animationComplete = true;
+  /**
+   * Starfield Animation
+   */
+  animateStarfield(ctx) {
+    if (this.state.isComplete) return;
 
-    this.overlay?.classList.add('fade-out');
+    const time = Date.now() * 0.001;
 
-    setTimeout(() => {
-      this.overlay?.remove();
-      document.body.classList.remove('welcome-active');
-      this.revealMainContent();
-    }, 700);
-  }
+    // Canvas leeren
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
-  skip() {
-    if (this.hasSkipped || this.animationComplete) return;
-    this.hasSkipped = true;
+    // Sterne zeichnen
+    this.stars.forEach(star => {
+      // Twinkle-Effekt
+      const twinkle = Math.sin(time * star.twinkleSpeed * 10 + star.twinkleOffset);
+      const opacity = star.opacity * (0.7 + twinkle * 0.3);
 
-    // Save skip preference (expires in 24 hours)
-    utils.storage.set('welcomeSkipped', {
-      expires: Date.now() + (24 * 60 * 60 * 1000)
+      ctx.beginPath();
+      ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(196, 120, 92, ${opacity})`;
+      ctx.fill();
+
+      // Glow für größere Sterne
+      if (star.size > 1) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size * 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(196, 120, 92, ${opacity * 0.2})`;
+        ctx.fill();
+      }
     });
 
-    this.fadeOut();
+    this.animationId = requestAnimationFrame(() => this.animateStarfield(ctx));
   }
 
-  setupSkipButton() {
+  /**
+   * Event Listeners einrichten
+   */
+  setupEventListeners() {
+    // Skip Button
     if (this.skipBtn) {
       this.skipBtn.addEventListener('click', () => this.skip());
+    }
 
-      // Also allow skipping with Escape key or any click/tap
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          this.skip();
-        }
-      }, { once: true });
+    // Escape-Taste
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !this.state.isComplete) {
+        this.skip();
+      }
+    });
+  }
+
+  /**
+   * Progress-Anzeige starten
+   */
+  startProgress() {
+    if (this.progress) {
+      // Kleine Verzögerung für CSS-Transition
+      requestAnimationFrame(() => {
+        this.progress.classList.add('active');
+      });
     }
   }
 
-  revealMainContent() {
-    // Trigger hero section animation
-    const heroContent = document.querySelector('.hero-content');
-    const heroElements = document.querySelectorAll('.hero .animate-on-scroll');
+  /**
+   * Fallback Timer (max. 2.5s)
+   */
+  setupFallbackTimer() {
+    setTimeout(() => {
+      if (!this.state.isComplete && !this.state.isSkipped) {
+        this.complete();
+      }
+    }, this.config.maxDuration);
+  }
+
+  /**
+   * Auf Ressourcen warten
+   */
+  waitForResources() {
+    // Wenn Seite bereits geladen
+    if (document.readyState === 'complete') {
+      this.onResourcesLoaded();
+      return;
+    }
+
+    // Auf window.load warten
+    window.addEventListener('load', () => {
+      this.onResourcesLoaded();
+    });
+  }
+
+  /**
+   * Callback wenn Ressourcen geladen
+   */
+  onResourcesLoaded() {
+    this.state.resourcesLoaded = true;
+
+    // Mindestanzeigezeit einhalten
+    const elapsed = Date.now() - this.state.startTime;
+    const remaining = Math.max(0, this.config.minDisplayTime - elapsed);
 
     setTimeout(() => {
-      heroContent?.classList.add('visible');
-      heroElements.forEach((el, index) => {
-        setTimeout(() => {
-          el.classList.add('animate-in');
-        }, index * 100);
-      });
-    }, 100);
+      if (!this.state.isComplete && !this.state.isSkipped) {
+        this.complete();
+      }
+    }, remaining);
+  }
 
-    // Dispatch custom event
-    document.dispatchEvent(new CustomEvent('welcomeComplete'));
+  /**
+   * User-initiierter Skip
+   */
+  skip() {
+    if (this.state.isComplete || this.state.isSkipped) return;
+    this.state.isSkipped = true;
+
+    // Session markieren (für schnelle Navigation)
+    sessionStorage.setItem('loaderShown', 'true');
+
+    this.complete();
+  }
+
+  /**
+   * Loader abschließen
+   */
+  complete() {
+    if (this.state.isComplete) return;
+    this.state.isComplete = true;
+
+    // Session markieren
+    sessionStorage.setItem('loaderShown', 'true');
+
+    // Animation stoppen
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+    }
+
+    // Fade out
+    this.overlay?.classList.add('fade-out');
+
+    // Nach Fade-out entfernen
+    setTimeout(() => {
+      this.overlay?.classList.add('hidden');
+      document.body.classList.remove('loader-active');
+      this.revealContent();
+
+      // Event dispatchen
+      document.dispatchEvent(new CustomEvent('loaderComplete'));
+
+      // Cleanup
+      setTimeout(() => {
+        this.overlay?.remove();
+      }, 100);
+    }, this.config.fadeOutDuration);
+  }
+
+  /**
+   * Content einblenden
+   */
+  revealContent() {
+    // Hero Section animieren
+    const heroContent = document.querySelector('.hero-content');
+    const animatedElements = document.querySelectorAll('.hero .animate-on-scroll');
+
+    if (heroContent) {
+      heroContent.classList.add('visible');
+    }
+
+    animatedElements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('animate-in');
+      }, index * 80);
+    });
   }
 }
 
-// Initialize when DOM is ready
+// ============================================
+// INITIALISIERUNG
+// ============================================
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Only initialize if welcome overlay exists
-  if (document.getElementById('welcome-overlay')) {
-    new WelcomeAnimation();
+  // Nur initialisieren wenn Loader vorhanden
+  if (document.getElementById('loader-overlay')) {
+    window.starfieldLoader = new StarfieldLoader();
   }
 });
 
-// Export for use elsewhere
-window.WelcomeAnimation = WelcomeAnimation;
+// Export für externe Nutzung
+window.StarfieldLoader = StarfieldLoader;

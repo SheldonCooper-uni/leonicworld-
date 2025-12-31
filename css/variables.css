@@ -1,103 +1,158 @@
-/* CSS Custom Properties - Design System */
+/* ============================================
+   LEONIC'S WORLD - Design System
+   ============================================
+
+   Stimmung: Elegant, reduziert, cinematic, editorial
+   Inspiriert von: Natur, Universum, Psychologie
+   Keine neonigen SaaS-Gradienten - stattdessen warme,
+   gedämpfte Töne mit hohem Kontrast aber Softness.
+
+   ============================================ */
+
 :root {
-  /* Background Colors */
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #151520;
-  --bg-tertiary: #1a1a2e;
-  --bg-overlay: rgba(0, 0, 0, 0.8);
+  /* ====== FARBPALETTE ====== */
 
-  /* Glass Effect */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-border-hover: rgba(255, 255, 255, 0.15);
-  --glass-shadow: rgba(0, 0, 0, 0.3);
+  /*
+   * Primärfarbe (Akzent): Warmes Terracotta/Kupfer
+   * - Nicht SaaS-typisch, sondern "handcrafted" und warm
+   * - Erinnert an Erde, Natur, Authentizität
+   */
+  --accent-primary: #c4785c;
+  --accent-primary-light: #d8947c;
+  --accent-primary-dark: #a85f44;
+  --accent-primary-muted: rgba(196, 120, 92, 0.15);
 
-  /* Accent Colors */
-  --accent-purple: #8b5cf6;
-  --accent-purple-light: #a78bfa;
-  --accent-purple-dark: #7c3aed;
-  --accent-cyan: #06b6d4;
-  --accent-cyan-light: #22d3ee;
-  --accent-cyan-dark: #0891b2;
+  /*
+   * Sekundäre Akzentfarbe: Gedämpftes Salbei/Grün
+   * - Sparsam einsetzen (nur Highlights)
+   * - Bringt Balance zur warmen Primärfarbe
+   */
+  --accent-secondary: #7d9485;
+  --accent-secondary-light: #9ab3a5;
+  --accent-secondary-muted: rgba(125, 148, 133, 0.15);
 
-  /* Text Colors */
-  --text-primary: #f1f5f9;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-dark: #475569;
+  /*
+   * Neutrale Farben
+   * - Off-White (cremig, nicht kalt)
+   * - Graphit-Töne (nicht reines Schwarz)
+   */
+  --neutral-white: #f5f2ed;
+  --neutral-cream: #e8e4dd;
+  --neutral-warm-gray: #bab5ad;
+  --neutral-graphite: #4a4744;
+  --neutral-charcoal: #2d2a28;
+  --neutral-near-black: #1a1816;
 
-  /* Status Colors */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: #3b82f6;
+  /* ====== HINTERGRUNDFARBEN ====== */
+  --bg-primary: #1a1816;
+  --bg-secondary: #222019;
+  --bg-tertiary: #2d2a28;
+  --bg-elevated: #353230;
+  --bg-overlay: rgba(26, 24, 22, 0.92);
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
-  --gradient-secondary: linear-gradient(135deg, #a78bfa 0%, #22d3ee 100%);
-  --gradient-dark: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
-  --gradient-glow: linear-gradient(135deg, rgba(139, 92, 246, 0.5) 0%, rgba(6, 182, 212, 0.5) 100%);
+  /* ====== GLASSMORPHISM (dezenter) ====== */
+  --glass-bg: rgba(245, 242, 237, 0.03);
+  --glass-bg-hover: rgba(245, 242, 237, 0.06);
+  --glass-border: rgba(245, 242, 237, 0.08);
+  --glass-border-hover: rgba(245, 242, 237, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.4);
 
-  /* Fonts */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'Fira Code', 'Monaco', 'Consolas', monospace;
+  /* ====== TEXTFARBEN ====== */
+  --text-primary: #f5f2ed;
+  --text-secondary: #bab5ad;
+  --text-muted: #8a857d;
+  --text-accent: var(--accent-primary-light);
 
-  /* Font Sizes - Fluid Typography */
-  --fs-hero: clamp(3rem, 8vw, 6rem);
-  --fs-h1: clamp(2.5rem, 5vw, 4rem);
-  --fs-h2: clamp(2rem, 4vw, 3rem);
+  /* ====== STATUS-FARBEN ====== */
+  --success: #7d9485;
+  --warning: #d4a574;
+  --error: #c27066;
+  --info: #7a8fa3;
+
+  /* ====== GRADIENTEN (subtil, nicht neon) ====== */
+  --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-primary-light) 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(196, 120, 92, 0.08) 0%, rgba(125, 148, 133, 0.08) 100%);
+  --gradient-dark: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+  --gradient-radial-warm: radial-gradient(ellipse at 30% 20%, rgba(196, 120, 92, 0.08) 0%, transparent 50%);
+  --gradient-radial-cool: radial-gradient(ellipse at 70% 80%, rgba(125, 148, 133, 0.05) 0%, transparent 50%);
+
+  /* ====== TYPOGRAFIE ====== */
+  /*
+   * Headline: Cormorant Garamond
+   * - Elegant, editorial, zeitlos
+   * - Serif mit Charakter
+   *
+   * Body: Source Sans 3
+   * - Modern, lesbar, professionell
+   * - Gute Lesbarkeit auf allen Größen
+   */
+  --font-heading: 'Cormorant Garamond', 'Georgia', serif;
+  --font-primary: 'Source Sans 3', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+
+  /* ====== TYPOGRAFIE-SKALA ====== */
+  --fs-hero: clamp(3.5rem, 10vw, 7rem);
+  --fs-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h2: clamp(1.875rem, 4vw, 3rem);
   --fs-h3: clamp(1.5rem, 3vw, 2rem);
-  --fs-h4: clamp(1.25rem, 2.5vw, 1.5rem);
-  --fs-body: clamp(1rem, 2vw, 1.125rem);
+  --fs-h4: clamp(1.125rem, 2vw, 1.375rem);
+  --fs-body: clamp(1rem, 1.5vw, 1.125rem);
   --fs-small: 0.875rem;
   --fs-xs: 0.75rem;
 
-  /* Font Weights */
+  /* ====== ZEILENHÖHEN ====== */
+  --lh-tight: 1.1;
+  --lh-heading: 1.2;
+  --lh-body: 1.7;
+  --lh-relaxed: 1.9;
+
+  /* ====== FONT WEIGHTS ====== */
   --fw-light: 300;
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
   --fw-bold: 700;
 
-  /* Spacing */
+  /* ====== SPACING (großzügiger) ====== */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-  --space-4xl: 6rem;
-  --space-5xl: 8rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 8rem;
+  --space-5xl: 12rem;
 
-  /* Container */
-  --container-max: 1200px;
-  --container-padding: clamp(1rem, 5vw, 2rem);
+  /* ====== CONTAINER ====== */
+  --container-max: 1100px;
+  --container-narrow: 720px;
+  --container-wide: 1400px;
+  --container-padding: clamp(1.5rem, 5vw, 3rem);
 
-  /* Border Radius */
+  /* ====== BORDER RADIUS ====== */
   --radius-sm: 4px;
   --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.25);
-  --shadow-glow-purple: 0 0 30px rgba(139, 92, 246, 0.3);
-  --shadow-glow-cyan: 0 0 30px rgba(6, 182, 212, 0.3);
+  /* ====== SCHATTEN (weicher) ====== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.18);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.24);
+  --shadow-xl: 0 16px 64px rgba(0, 0, 0, 0.32);
+  --shadow-glow: 0 0 40px rgba(196, 120, 92, 0.15);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  /* Transitions */
+  /* ====== TRANSITIONS ====== */
   --transition-fast: 150ms ease;
   --transition-normal: 300ms ease;
   --transition-slow: 500ms ease;
-  --transition-bounce: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-smooth: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* Z-Index Scale */
+  /* ====== Z-INDEX SCALE ====== */
   --z-base: 0;
   --z-dropdown: 100;
   --z-sticky: 200;
@@ -105,16 +160,16 @@
   --z-modal-backdrop: 400;
   --z-modal: 500;
   --z-tooltip: 600;
-  --z-welcome: 1000;
+  --z-loader: 1000;
 
-  /* Navbar */
-  --navbar-height: 70px;
-  --navbar-height-scrolled: 60px;
+  /* ====== NAVBAR ====== */
+  --navbar-height: 80px;
+  --navbar-height-scrolled: 64px;
 }
 
-/* Dark theme is default, but we define it explicitly */
+/* Dark theme ist Standard */
 [data-theme="dark"] {
-  --bg-primary: #0a0a0f;
-  --bg-secondary: #151520;
-  --bg-tertiary: #1a1a2e;
+  --bg-primary: #1a1816;
+  --bg-secondary: #222019;
+  --bg-tertiary: #2d2a28;
 }
