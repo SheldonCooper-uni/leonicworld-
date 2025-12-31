@@ -57,7 +57,9 @@
         <div class="loader-comet"></div>
       </div>
       <div class="loader-brand">
-        <span class="loader-brand-text">Leonic's World</span>
+        <span class="loader-brand-text">
+          <span class="letter">L</span><span class="letter">e</span><span class="letter">o</span><span class="letter">n</span><span class="letter">i</span><span class="letter">c</span><span class="letter">'</span><span class="letter">s</span><span class="letter space"> </span><span class="letter">W</span><span class="letter">o</span><span class="letter">r</span><span class="letter">l</span><span class="letter">d</span>
+        </span>
       </div>
     </div>
 
@@ -141,7 +143,7 @@
               <span class="hero-fact-label">Duisburg</span>
             </div>
             <div class="hero-fact animate-on-scroll">
-              <span class="hero-fact-icon">23</span>
+              <span class="hero-fact-icon">24</span>
               <span class="hero-fact-label">Jahre alt</span>
             </div>
           </div>
@@ -176,14 +178,17 @@
           <div class="about-text animate-on-scroll animate-slide-right">
             <h2 class="section-title" style="text-align: left;">Wer bin ich?</h2>
             <p class="lead">
-              In Serbien geboren, mit 13 nach Deutschland gekommen.
-              Heute lebe ich in Duisburg und mache, was mich antreibt.
+              Ich bin jemand der Brücken baut. Zwischen Sprachen.
+              Zwischen Kulturen. Zwischen Ideen und Umsetzung.
             </p>
             <p>
-              Ich spreche vier Sprachen fließend, arbeite strukturiert
-              und lerne ständig dazu. Ob Webprojekte, AI-generierte Kunst
-              oder Deutschunterricht - ich gehe Dinge praxisorientiert an
-              und liefere saubere Ergebnisse.
+              Geboren in Serbien, aufgewachsen in Deutschland, zuhause in
+              beiden Welten. Ich kombiniere Dinge die normalerweise nicht
+              zusammengehören: Deutsch-Unterricht + AI Art. Code + Sprache.
+              Analytisches Denken + visuelle Kreativität.
+            </p>
+            <p style="color: var(--text-muted); font-style: italic;">
+              Warum? Weil ich kann. Und weil's funktioniert.
             </p>
             <a href="about.html" class="link-arrow">
               Mehr über mich
@@ -281,7 +286,7 @@
             </div>
             <div class="gallery-info">
               <h3>Forest Spirit</h3>
-              <p class="gallery-intention">Exploration von Licht und Mystik in natürlichen Umgebungen</p>
+              <p class="gallery-intention">Midjourney Test - mystische Waldstimmung</p>
               <div class="tags">
                 <span class="tag">Fantasy</span>
                 <span class="tag">Midjourney</span>
@@ -303,7 +308,7 @@
             </div>
             <div class="gallery-info">
               <h3>Mystery Landscape</h3>
-              <p class="gallery-intention">Atmosphärische Stimmungen und cinematic Lighting</p>
+              <p class="gallery-intention">Experiment mit cinematic Lighting und Nebel</p>
               <div class="tags">
                 <span class="tag">Landscape</span>
                 <span class="tag">Cinematic</span>
@@ -311,16 +316,19 @@
             </div>
           </article>
 
-          <!-- Placeholder Items für zukünftige Werke -->
+          <!-- Work in Progress Items -->
           <article class="gallery-item glass gallery-placeholder" data-category="character">
             <div class="gallery-image">
               <div class="placeholder-content">
-                <span>Kommt bald</span>
+                <div class="wip-indicator">
+                  <span class="wip-icon">&#9998;</span>
+                  <span>In Arbeit</span>
+                </div>
               </div>
             </div>
             <div class="gallery-info">
               <h3>Character Study</h3>
-              <p class="gallery-intention">Portrait und Character Design Experimente</p>
+              <p class="gallery-intention">Portrait Experimente</p>
               <div class="tags">
                 <span class="tag">Portrait</span>
               </div>
@@ -330,12 +338,15 @@
           <article class="gallery-item glass gallery-placeholder" data-category="abstract">
             <div class="gallery-image">
               <div class="placeholder-content">
-                <span>Kommt bald</span>
+                <div class="wip-indicator">
+                  <span class="wip-icon">&#9998;</span>
+                  <span>In Arbeit</span>
+                </div>
               </div>
             </div>
             <div class="gallery-info">
               <h3>Abstract Forms</h3>
-              <p class="gallery-intention">Abstrakte Kompositionen und Texturen</p>
+              <p class="gallery-intention">Textur & Kompositions-Tests</p>
               <div class="tags">
                 <span class="tag">Abstract</span>
               </div>
@@ -472,7 +483,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+        <p>2025 Leon Erdeg. Alle Rechte vorbehalten. <span class="cat-easter-egg" title="Miau!">🐈‍⬛</span></p>
       </div>
     </div>
   </footer>
@@ -773,9 +784,26 @@
       font-style: italic;
     }
 
-    /* Placeholder für Gallery */
+    /* Placeholder für Gallery - Work in Progress Style */
     .gallery-placeholder .gallery-image {
-      background: var(--bg-tertiary);
+      background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(196, 120, 92, 0.1) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-placeholder .gallery-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(196, 120, 92, 0.03) 10px,
+          rgba(196, 120, 92, 0.03) 20px
+        );
+      backdrop-filter: blur(2px);
     }
 
     .placeholder-content {
@@ -788,6 +816,26 @@
       font-size: var(--fs-small);
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      position: relative;
+      z-index: 1;
+    }
+
+    .wip-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-sm);
+      opacity: 0.7;
+    }
+
+    .wip-icon {
+      font-size: 1.5rem;
+      animation: wiggle 2s ease-in-out infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
     }
 
     /* ====== LIGHTBOX ====== */
@@ -989,6 +1037,27 @@
     .footer-bottom p {
       font-size: var(--fs-small);
       color: var(--text-muted);
+    }
+
+    /* Cat Easter Egg */
+    .cat-easter-egg {
+      cursor: pointer;
+      opacity: 0.3;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .cat-easter-egg:hover {
+      opacity: 1;
+      transform: scale(1.3) rotate(-10deg);
+      animation: catWiggle 0.5s ease;
+    }
+
+    @keyframes catWiggle {
+      0%, 100% { transform: scale(1.3) rotate(-10deg); }
+      25% { transform: scale(1.4) rotate(5deg); }
+      50% { transform: scale(1.3) rotate(-5deg); }
+      75% { transform: scale(1.4) rotate(3deg); }
     }
 
     /* ====== IMAGE PLACEHOLDER ====== */

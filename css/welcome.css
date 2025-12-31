@@ -3,10 +3,10 @@
    ============================================
 
    Ein eleganter, cinematischer Loader mit:
+   - Film Grain Effekt für cinematic feel
    - Sternenfeld-Canvas-Hintergrund
-   - Orbit-Animation mit Komet um das "LW" Logo
-   - Konstellationslinien die das Logo andeuten
-   - Smooth fade-out transition
+   - Letter-by-letter Text Reveal
+   - Smooth crossfade transition
 
    ============================================ */
 
@@ -14,14 +14,14 @@
 .loader-overlay {
   position: fixed;
   inset: 0;
-  background: var(--bg-primary);
+  background: #0a0908;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: var(--z-loader);
   opacity: 1;
   visibility: visible;
-  transition: opacity 400ms ease, visibility 400ms ease;
+  transition: opacity 600ms ease, visibility 600ms ease;
 }
 
 .loader-overlay.fade-out {
@@ -31,6 +31,31 @@
 
 .loader-overlay.hidden {
   display: none;
+}
+
+/* ====== FILM GRAIN EFFECT ====== */
+.loader-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 1;
+  animation: grainShift 0.5s steps(10) infinite;
+}
+
+@keyframes grainShift {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-2%, -2%); }
+  20% { transform: translate(2%, 2%); }
+  30% { transform: translate(-1%, 3%); }
+  40% { transform: translate(3%, -1%); }
+  50% { transform: translate(-3%, 1%); }
+  60% { transform: translate(1%, -3%); }
+  70% { transform: translate(-2%, 2%); }
+  80% { transform: translate(2%, -2%); }
+  90% { transform: translate(-1%, -1%); }
 }
 
 /* ====== STARFIELD CANVAS ====== */
@@ -231,12 +256,12 @@
   }
 }
 
-/* ====== BRAND TEXT ====== */
+/* ====== BRAND TEXT - Letter by Letter ====== */
 .loader-brand {
   margin-top: var(--space-xl);
   opacity: 0;
   transform: translateY(10px);
-  animation: brandReveal 0.6s ease 0.8s forwards;
+  animation: brandReveal 0.6s ease 1s forwards;
 }
 
 @keyframes brandReveal {
@@ -248,11 +273,46 @@
 
 .loader-brand-text {
   font-family: var(--font-heading);
-  font-size: var(--fs-body);
+  font-size: var(--fs-h4);
   font-weight: var(--fw-light);
-  color: var(--text-muted);
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  color: var(--text-primary);
+  letter-spacing: 0.15em;
+  display: flex;
+  gap: 0.08em;
+}
+
+.loader-brand-text .letter {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: letterReveal 0.4s ease forwards;
+}
+
+.loader-brand-text .letter.space {
+  width: 0.5em;
+}
+
+/* Stagger letter animations */
+.loader-brand-text .letter:nth-child(1) { animation-delay: 1.0s; }
+.loader-brand-text .letter:nth-child(2) { animation-delay: 1.05s; }
+.loader-brand-text .letter:nth-child(3) { animation-delay: 1.1s; }
+.loader-brand-text .letter:nth-child(4) { animation-delay: 1.15s; }
+.loader-brand-text .letter:nth-child(5) { animation-delay: 1.2s; }
+.loader-brand-text .letter:nth-child(6) { animation-delay: 1.25s; }
+.loader-brand-text .letter:nth-child(7) { animation-delay: 1.3s; }
+.loader-brand-text .letter:nth-child(8) { animation-delay: 1.35s; }
+.loader-brand-text .letter:nth-child(9) { animation-delay: 1.4s; }
+.loader-brand-text .letter:nth-child(10) { animation-delay: 1.45s; }
+.loader-brand-text .letter:nth-child(11) { animation-delay: 1.5s; }
+.loader-brand-text .letter:nth-child(12) { animation-delay: 1.55s; }
+.loader-brand-text .letter:nth-child(13) { animation-delay: 1.6s; }
+.loader-brand-text .letter:nth-child(14) { animation-delay: 1.65s; }
+.loader-brand-text .letter:nth-child(15) { animation-delay: 1.7s; }
+
+@keyframes letterReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ====== SKIP BUTTON ====== */
