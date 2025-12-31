@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio von Leon Erdeg - Web Development, Content Creation und Design Projekte.">
+  <meta name="author" content="Leon Erdeg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio | Leonic's World">
+  <meta property="og:description" content="Meine Projekte - Web Development, Content Creation, Design">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+  <title>Portfolio | Leonic's World</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Leonic</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">Über mich</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link active">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">Über mich</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="portfolio-header">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">Meine Projekte</h1>
+        <p class="page-subtitle animate-on-scroll">
+          Eine Auswahl meiner Arbeiten
+        </p>
+
+        <div class="filter-buttons animate-on-scroll">
+          <button class="filter-btn active" data-filter="all">Alle</button>
+          <button class="filter-btn" data-filter="web">Web Development</button>
+          <button class="filter-btn" data-filter="content">Content</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section">
+      <div class="container">
+        <div class="portfolio-grid stagger-children" id="portfolio-grid">
+
+          <!-- Project 1: LeonicAURA -->
+          <article class="portfolio-item glass card" data-category="web">
+            <div class="portfolio-image">
+              <img src="images/projects/leonicaura-screenshot.jpg" alt="LeonicAURA" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LA</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>LeonicAURA</h3>
+                  <p>Deutsch-Lehrplattform</p>
+                  <div class="overlay-buttons">
+                    <a href="https://leonicaura.com" target="_blank" rel="noopener noreferrer" class="btn btn-small btn-primary">
+                      Live
+                    </a>
+                    <button class="btn btn-small btn-secondary glass" data-modal="leonicaura">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>LeonicAURA</h3>
+              <p>Professionelle Website für Deutsch-Unterricht</p>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: This Portfolio -->
+          <article class="portfolio-item glass card" data-category="web">
+            <div class="portfolio-image">
+              <img src="images/projects/portfolio-screenshot.jpg" alt="Leonic's World Portfolio" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LW</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>Leonic's World</h3>
+                  <p>Portfolio Website</p>
+                  <div class="overlay-buttons">
+                    <a href="index.html" class="btn btn-small btn-primary">
+                      Live
+                    </a>
+                    <button class="btn btn-small btn-secondary glass" data-modal="portfolio">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Leonic's World</h3>
+              <p>Diese Portfolio-Website mit Glassmorphism Design</p>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Glassmorphism</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Content Creation -->
+          <article class="portfolio-item glass card" data-category="content">
+            <div class="portfolio-image">
+              <img src="images/projects/ugc-content.jpg" alt="UGC Content" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>UGC</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>UGC Portfolio</h3>
+                  <p>User Generated Content</p>
+                  <div class="overlay-buttons">
+                    <button class="btn btn-small btn-primary" data-modal="ugc">
+                      Ansehen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>UGC Content</h3>
+              <p>User Generated Content für verschiedene Brands</p>
+              <div class="tags">
+                <span class="tag">Video</span>
+                <span class="tag">UGC</span>
+                <span class="tag">Social Media</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: AI Art -->
+          <article class="portfolio-item glass card" data-category="design">
+            <div class="portfolio-image">
+              <img src="images/projects/ai-art.jpg" alt="AI Art" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>AI</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>AI Art Collection</h3>
+                  <p>AI-generierte Kunstwerke</p>
+                  <div class="overlay-buttons">
+                    <button class="btn btn-small btn-primary" data-modal="aiart">
+                      Galerie
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>AI Art Collection</h3>
+              <p>AI-generierte Bilder und Grafiken</p>
+              <div class="tags">
+                <span class="tag">AI Art</span>
+                <span class="tag">Midjourney</span>
+                <span class="tag">Creative</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Character Design -->
+          <article class="portfolio-item glass card" data-category="design">
+            <div class="portfolio-image">
+              <img src="images/projects/character-design.jpg" alt="Character Design" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>CD</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>Character Design</h3>
+                  <p>Custom Charaktere</p>
+                  <div class="overlay-buttons">
+                    <button class="btn btn-small btn-primary" data-modal="characters">
+                      Galerie
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Character Design</h3>
+              <p>Custom Charaktere für Spiele und Projekte</p>
+              <div class="tags">
+                <span class="tag">Design</span>
+                <span class="tag">Character</span>
+                <span class="tag">Creative</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Learning Materials -->
+          <article class="portfolio-item glass card" data-category="content">
+            <div class="portfolio-image">
+              <img src="images/projects/learning-materials.jpg" alt="Learning Materials" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LM</span></div>'">
+              <div class="portfolio-overlay">
+                <div class="overlay-content">
+                  <h3>Lernmaterialien</h3>
+                  <p>Deutsch-Lernmaterialien</p>
+                  <div class="overlay-buttons">
+                    <button class="btn btn-small btn-primary" data-modal="materials">
+                      Ansehen
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-info">
+              <h3>Lernmaterialien</h3>
+              <p>PDF & interaktive Deutsch-Lernmaterialien</p>
+              <div class="tags">
+                <span class="tag">Education</span>
+                <span class="tag">PDF</span>
+                <span class="tag">Design</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content glass animate-on-scroll">
+          <h2>Projekt im Kopf?</h2>
+          <p>
+            Lass uns zusammenarbeiten und deine Idee zum Leben erwecken.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">
+              Projekt anfragen
+            </a>
+            <a href="services.html" class="btn btn-secondary glass">
+              Services ansehen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modals -->
+  <!-- LeonicAURA Modal -->
+  <div id="modal-leonicaura" class="modal">
+    <div class="modal-content glass-modal">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <img src="images/projects/leonicaura-screenshot.jpg" alt="LeonicAURA" onerror="this.style.display='none'">
+        <h2>LeonicAURA</h2>
+        <p class="project-category">Web Development</p>
+        <div class="project-description">
+          <h3>Über das Projekt</h3>
+          <p>
+            Eine vollständige Website für mein Deutsch-Unterricht Business.
+            Features: Responsive Design, Buchungssystem, Testimonials, FAQ,
+            Kontaktformular, Preistabellen und mehr.
+          </p>
+          <h3>Technologien</h3>
+          <div class="tech-tags tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">EmailJS</span>
+            <span class="tag">Responsive</span>
+          </div>
+          <h3>Features</h3>
+          <ul>
+            <li>Multi-section Layout mit smooth scroll</li>
+            <li>Glassmorphism Design</li>
+            <li>Kontaktformular mit Email-Integration</li>
+            <li>Testimonials Slider</li>
+            <li>FAQ Accordion</li>
+            <li>Mobile-optimiert</li>
+          </ul>
+          <div class="project-links">
+            <a href="https://leonicaura.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              Live Website
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Modal -->
+  <div id="modal-portfolio" class="modal">
+    <div class="modal-content glass-modal">
+      <button class="modal-close">&times;</button>
+      <div class="modal-body">
+        <h2>Leonic's World</h2>
+        <p class="project-category">Web Development</p>
+        <div class="project-description">
+          <h3>Über das Projekt</h3>
+          <p>
+            Meine persönliche Portfolio-Website mit modernem Glassmorphism Design,
+            Welcome Animation, Blog-System und vollständig responsive.
+          </p>
+          <h3>Technologien</h3>
+          <div class="tech-tags tags">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Glassmorphism</span>
+            <span class="tag">GitHub Pages</span>
+          </div>
+          <h3>Features</h3>
+          <ul>
+            <li>Welcome Animation mit Skip-Option</li>
+            <li>Multi-page Navigation</li>
+            <li>Blog System mit JSON</li>
+            <li>Scroll Animations</li>
+            <li>Dark Mode Design</li>
+            <li>Vollständig responsive</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-text">Leonic</a>
+          <p>Multilingual Digital Creator & Web Developer</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#language">Sprachtraining</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#content">Content Creation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="mailto:infoleonicaura@gmail.com">E-Mail</a></li>
+              <li><a href="https://wa.me/4917663005489">WhatsApp</a></li>
+              <li><a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    /* Portfolio Header */
+    .portfolio-header {
+      padding: var(--space-5xl) 0 var(--space-3xl);
+      text-align: center;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid-section {
+      padding-bottom: var(--space-5xl);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      padding: 0;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+    }
+
+    .portfolio-image {
+      position: relative;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+
+    .portfolio-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .portfolio-item:hover .portfolio-image img {
+      transform: scale(1.05);
+    }
+
+    .portfolio-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+    }
+
+    .portfolio-item:hover .portfolio-overlay {
+      opacity: 1;
+    }
+
+    .overlay-content {
+      text-align: center;
+      padding: var(--space-lg);
+    }
+
+    .overlay-content h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-xs);
+    }
+
+    .overlay-content p {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-md);
+    }
+
+    .overlay-buttons {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+    }
+
+    .portfolio-info {
+      padding: var(--space-lg);
+    }
+
+    .portfolio-info h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-xs);
+    }
+
+    .portfolio-info p {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      margin-bottom: var(--space-md);
+    }
+
+    /* Modal Styles */
+    .modal-body {
+      padding: var(--space-xl);
+    }
+
+    .modal-body img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-xl);
+    }
+
+    .modal-body h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-xs);
+    }
+
+    .modal-body .project-category {
+      color: var(--accent-purple-light);
+      font-size: var(--fs-small);
+      margin-bottom: var(--space-xl);
+    }
+
+    .project-description h3 {
+      font-size: var(--fs-h4);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+
+    .project-description ul {
+      padding-left: var(--space-lg);
+    }
+
+    .project-description ul li {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+      position: relative;
+    }
+
+    .project-description ul li::before {
+      content: '✓';
+      position: absolute;
+      left: calc(var(--space-lg) * -1);
+      color: var(--accent-cyan);
+    }
+
+    .project-links {
+      margin-top: var(--space-xl);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-secondary);
+    }
+
+    .cta-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-content p {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: var(--space-4xl) 0 var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    .footer-brand .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--fw-bold);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      margin-top: var(--space-sm);
+      color: var(--text-muted);
+      font-size: var(--fs-small);
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .footer-column h4 {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-bottom p {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+  </style>
+</body>
+</html>

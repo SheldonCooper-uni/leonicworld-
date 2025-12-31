@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Blog von Leon Erdeg - Gedanken, Tipps und Geschichten über Web Development, Sprachen und mehr.">
+  <meta name="author" content="Leon Erdeg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Blog | Leonic's World">
+  <meta property="og:description" content="Gedanken, Tipps und Geschichten von Leon Erdeg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+  <title>Blog | Leonic's World</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Leonic</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">Über mich</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">Über mich</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+    <!-- Blog Header -->
+    <section class="blog-header">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">Blog</h1>
+        <p class="page-subtitle animate-on-scroll">
+          Gedanken, Tipps und Geschichten
+        </p>
+
+        <div class="filter-buttons animate-on-scroll">
+          <button class="filter-btn active" data-filter="all">Alle</button>
+          <button class="filter-btn" data-filter="web-development">Web Dev</button>
+          <button class="filter-btn" data-filter="sprachen">Sprachen</button>
+          <button class="filter-btn" data-filter="gedanken">Gedanken</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+      <div class="container">
+        <div id="blog-grid" class="blog-grid">
+          <!-- Posts loaded dynamically via blog.js -->
+        </div>
+
+        <div id="load-more" class="load-more">
+          <button class="btn btn-primary glass">Mehr laden</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-content glass animate-on-scroll">
+          <h2>Bleib auf dem Laufenden</h2>
+          <p>
+            Folge mir auf Instagram für regelmäßige Updates und Content.
+          </p>
+          <a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            @aicreativebitch folgen
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-text">Leonic</a>
+          <p>Multilingual Digital Creator & Web Developer</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#language">Sprachtraining</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#content">Content Creation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="mailto:infoleonicaura@gmail.com">E-Mail</a></li>
+              <li><a href="https://wa.me/4917663005489">WhatsApp</a></li>
+              <li><a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    /* Blog Header */
+    .blog-header {
+      padding: var(--space-5xl) 0 var(--space-3xl);
+      text-align: center;
+    }
+
+    /* Blog Posts Section */
+    .blog-posts {
+      padding-bottom: var(--space-5xl);
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-3xl);
+    }
+
+    /* Blog Card */
+    .blog-card {
+      overflow: hidden;
+      padding: 0;
+      transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+
+    .blog-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.15);
+    }
+
+    .blog-card .blog-image {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+
+    .blog-card .blog-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+
+    .blog-card:hover .blog-image img {
+      transform: scale(1.05);
+    }
+
+    .blog-card .blog-content {
+      padding: var(--space-lg);
+    }
+
+    .blog-card .blog-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-sm);
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-card .blog-category {
+      color: var(--accent-purple-light);
+      font-weight: var(--fw-medium);
+    }
+
+    .blog-card .blog-title {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-sm);
+    }
+
+    .blog-card .blog-title a {
+      color: var(--text-primary);
+      transition: color var(--transition-fast);
+    }
+
+    .blog-card .blog-title a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .blog-card .blog-excerpt {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: var(--space-md);
+    }
+
+    /* Load More */
+    .load-more {
+      text-align: center;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background: var(--bg-secondary);
+      padding: var(--space-5xl) 0;
+    }
+
+    .newsletter-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .newsletter-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-md);
+    }
+
+    .newsletter-content p {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+    }
+
+    /* Loading, Empty, Error States */
+    .loading-state,
+    .empty-state,
+    .error-state {
+      text-align: center;
+      padding: var(--space-3xl);
+      color: var(--text-muted);
+      grid-column: 1 / -1;
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--glass-border);
+      border-top-color: var(--accent-purple);
+      border-radius: 50%;
+      margin: 0 auto var(--space-md);
+      animation: rotate 1s linear infinite;
+    }
+
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: var(--space-4xl) 0 var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    .footer-brand .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--fw-bold);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      margin-top: var(--space-sm);
+      color: var(--text-muted);
+      font-size: var(--fs-small);
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .footer-column h4 {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-bottom p {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leonerdeg.github.io/leonicworld/sitemap.xml

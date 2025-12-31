@@ -1,0 +1,82 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Wie ich 5 Websites in einer Woche gebaut habe",
+      "slug": "5-websites-eine-woche",
+      "date": "2025-01-15",
+      "author": "Leon Erdeg",
+      "category": "Web Development",
+      "tags": ["coding", "productivity", "web dev"],
+      "excerpt": "Meine Tipps und Tricks für schnelles und effizientes Web-Development ohne Qualitätsverlust. Von der Planung bis zum Launch.",
+      "image": "images/blog/web-dev-tips.jpg",
+      "readTime": "5 min",
+      "content": "<h2>Die Herausforderung</h2><p>Letzte Woche habe ich mir vorgenommen, fünf verschiedene Websites zu bauen. Klingt verrückt? Vielleicht. Aber mit dem richtigen System ist es machbar.</p><h2>Meine Methode</h2><p>Das Geheimnis liegt in der Vorbereitung. Bevor ich auch nur eine Zeile Code schreibe, plane ich alles durch:</p><ul><li>Struktur und Seitenaufbau</li><li>Design-System mit wiederverwendbaren Komponenten</li><li>Content-Planung</li><li>Technische Anforderungen</li></ul><h2>Die Tools</h2><p>Ich arbeite mit HTML, CSS und JavaScript. Kein Framework, kein kompliziertes Setup. Einfach und effektiv.</p><h2>Das Ergebnis</h2><p>Alle fünf Websites sind live und funktionieren. Das Beste: Ich habe ein Template-System entwickelt, das ich immer wieder verwenden kann.</p><h2>Fazit</h2><p>Mit guter Planung und einem soliden System kannst du viel mehr schaffen als du denkst. Der Schlüssel ist, smart zu arbeiten - nicht nur hart.</p>"
+    },
+    {
+      "id": 2,
+      "title": "Deutsch lernen als Erwachsener: Meine 5 besten Tipps",
+      "slug": "deutsch-lernen-tipps",
+      "date": "2025-01-10",
+      "author": "Leon Erdeg",
+      "category": "Sprachen",
+      "tags": ["deutsch", "lernen", "tipps"],
+      "excerpt": "Als jemand der selbst Deutsch als Zweitsprache gelernt hat, teile ich meine Erfahrungen und was wirklich funktioniert.",
+      "image": "images/blog/deutsch-lernen.jpg",
+      "readTime": "7 min",
+      "content": "<h2>Meine Geschichte</h2><p>Ich bin mit 13 Jahren nach Deutschland gekommen. Kein Wort Deutsch. Heute spreche ich die Sprache fließend und unterrichte sie. Hier sind meine wichtigsten Erkenntnisse:</p><h2>Tipp 1: Immersion ist alles</h2><p>Umgib dich so viel wie möglich mit der Sprache. Deutsche Musik, Filme, Podcasts - alles hilft.</p><h2>Tipp 2: Sprich von Anfang an</h2><p>Warte nicht, bis du 'bereit' bist. Du wirst nie bereit sein. Fang einfach an zu sprechen.</p><h2>Tipp 3: Fehler sind deine Freunde</h2><p>Jeder Fehler ist eine Lernchance. Deutsche schätzen es, wenn du es versuchst.</p><h2>Tipp 4: Fokus auf Kommunikation</h2><p>Perfekte Grammatik kommt später. Erstmal musst du dich verständlich machen können.</p><h2>Tipp 5: Bleib dran</h2><p>Sprachen lernen ist ein Marathon, kein Sprint. Regelmäßigkeit schlägt Intensität.</p>"
+    },
+    {
+      "id": 3,
+      "title": "Warum ich kein Framework benutze",
+      "slug": "kein-framework",
+      "date": "2025-01-05",
+      "author": "Leon Erdeg",
+      "category": "Web Development",
+      "tags": ["html", "css", "javascript", "opinion"],
+      "excerpt": "In einer Welt voller React, Vue und Angular - warum ich bei Vanilla JavaScript bleibe und warum das manchmal die bessere Wahl ist.",
+      "image": "images/blog/vanilla-js.jpg",
+      "readTime": "6 min",
+      "content": "<h2>Die Framework-Flut</h2><p>Jeder redet über React. Oder Vue. Oder das nächste neue Ding. Aber braucht man das wirklich für jedes Projekt?</p><h2>Meine Perspektive</h2><p>Für die meisten Websites - Landing Pages, Portfolios, kleine Business-Seiten - ist Vanilla JavaScript mehr als genug.</p><h2>Die Vorteile</h2><ul><li>Keine Build-Tools nötig</li><li>Schnellere Ladezeiten</li><li>Weniger Abhängigkeiten</li><li>Einfacheres Hosting (GitHub Pages!)</li><li>Besseres Verständnis der Grundlagen</li></ul><h2>Wann Frameworks Sinn machen</h2><p>Bei komplexen Web-Apps, großen Teams oder wenn spezifische Features benötigt werden - da können Frameworks glänzen.</p><h2>Mein Fazit</h2><p>Wähle das richtige Tool für den Job. Nicht das trendigste.</p>"
+    },
+    {
+      "id": 4,
+      "title": "Leben zwischen zwei Kulturen",
+      "slug": "zwei-kulturen",
+      "date": "2024-12-28",
+      "author": "Leon Erdeg",
+      "category": "Gedanken",
+      "tags": ["persönlich", "kultur", "integration"],
+      "excerpt": "Serbische Wurzeln, deutsches Leben - wie es ist, in zwei Welten zu Hause zu sein und was ich daraus gelernt habe.",
+      "image": "images/blog/zwei-kulturen.jpg",
+      "readTime": "8 min",
+      "content": "<h2>Zwei Welten</h2><p>In Serbien geboren, in Deutschland aufgewachsen. Ich bin weder ganz das eine noch das andere - und das ist okay.</p><h2>Die Herausforderungen</h2><p>Am Anfang war es schwer. Neue Sprache, neue Kultur, neue Regeln. Manchmal fühlte ich mich nirgendwo zugehörig.</p><h2>Die Stärken</h2><p>Heute sehe ich es als Superkraft. Ich kann zwischen Welten wechseln, beide Perspektiven verstehen.</p><h2>Was ich gelernt habe</h2><ul><li>Anpassungsfähigkeit ist eine Stärke</li><li>Identität ist nicht binär</li><li>Verschiedenheit bereichert</li><li>Sprache öffnet Türen</li></ul><h2>Meine Mission</h2><p>Genau diese Erfahrung nutze ich jetzt. Ich helfe anderen vom Balkan, ihren Weg in Deutschland zu finden.</p>"
+    },
+    {
+      "id": 5,
+      "title": "AI in der Content Creation: Fluch oder Segen?",
+      "slug": "ai-content-creation",
+      "date": "2024-12-20",
+      "author": "Leon Erdeg",
+      "category": "Gedanken",
+      "tags": ["ai", "content", "zukunft"],
+      "excerpt": "Wie ich AI-Tools in meiner Arbeit einsetze und warum die menschliche Note trotzdem unersetzbar bleibt.",
+      "image": "images/blog/ai-content.jpg",
+      "readTime": "6 min",
+      "content": "<h2>Die AI-Revolution</h2><p>ChatGPT, Midjourney, DALL-E - AI-Tools sind überall. Als Content Creator muss ich mich damit auseinandersetzen.</p><h2>Wie ich AI nutze</h2><ul><li>Bildgenerierung für Konzepte</li><li>Brainstorming und Ideenfindung</li><li>Code-Unterstützung</li><li>Textüberarbeitung</li></ul><h2>Was AI nicht kann</h2><p>Authentizität. Persönliche Erfahrungen. Echte Emotionen. Die Dinge, die Content wirklich menschlich machen.</p><h2>Mein Ansatz</h2><p>AI ist ein Werkzeug, kein Ersatz. Ich nutze es, um effizienter zu sein - aber der kreative Kern kommt immer von mir.</p><h2>Die Zukunft</h2><p>Wer AI ignoriert, bleibt zurück. Wer nur auf AI setzt, verliert seine Stimme. Die Kunst liegt in der Balance.</p>"
+    },
+    {
+      "id": 6,
+      "title": "Glassmorphism: Der Design-Trend erklärt",
+      "slug": "glassmorphism-trend",
+      "date": "2024-12-15",
+      "author": "Leon Erdeg",
+      "category": "Web Development",
+      "tags": ["design", "css", "trends"],
+      "excerpt": "Was ist Glassmorphism, wie setzt man es um und warum ist es so beliebt? Ein Deep Dive in den Design-Trend.",
+      "image": "images/blog/glassmorphism.jpg",
+      "readTime": "5 min",
+      "content": "<h2>Was ist Glassmorphism?</h2><p>Glassmorphism ist ein Design-Trend, der Elemente wie aus milchigem Glas aussehen lässt. Transparenz, Blur und subtile Schatten erzeugen Tiefe und Eleganz.</p><h2>Die CSS-Magie</h2><p>Das Kernstück ist <code>backdrop-filter: blur()</code>. Kombiniert mit transparentem Hintergrund und subtilen Borders entsteht der Glas-Effekt.</p><h2>Wann es funktioniert</h2><ul><li>Auf bunten oder gradient Hintergründen</li><li>Für Cards und Modals</li><li>In Dark Mode Designs</li></ul><h2>Wann man vorsichtig sein sollte</h2><ul><li>Performance auf älteren Geräten</li><li>Lesbarkeit bei zu viel Transparenz</li><li>Browser-Kompatibilität prüfen</li></ul><h2>Mein Fazit</h2><p>Glassmorphism ist wunderschön, wenn richtig eingesetzt. Diese Website ist das beste Beispiel!</p>"
+    }
+  ]
+}
