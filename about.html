@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Erfahre mehr über Leon Erdeg - 24 Jahre, aus Duisburg, 4 Sprachen, Web Developer und Deutsch-Lehrer.">
+  <meta name="author" content="Leon Erdeg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Über mich | Leonic's World">
+  <meta property="og:description" content="Die Geschichte hinter Leonic's World - Leon Erdeg aus Duisburg">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+  <title>Über mich | Leonic's World</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Leonic</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link active">Über mich</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">Über mich</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">Über mich</h1>
+        <p class="page-subtitle animate-on-scroll">
+          Die Geschichte hinter Leonic's World
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Story Section -->
+    <section class="about-story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-image glass animate-on-scroll animate-slide-left">
+            <img src="images/profile/leon-about.jpg" alt="Leon Erdeg" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LE</span></div>'">
+          </div>
+
+          <div class="story-content animate-on-scroll animate-slide-right">
+            <h2>Hey, ich bin Leon 👋</h2>
+
+            <p>
+              24 Jahre alt, in Serbien geboren, mit 13 nach Deutschland gekommen.
+              Heute lebe ich in Duisburg und mache das, was mir Spaß macht.
+            </p>
+
+            <p>
+              Ich spreche Serbisch (Muttersprache), Deutsch (fließend),
+              Englisch (fließend) und Spanisch (konversationsfähig).
+              Sprachen waren schon immer meine Superkraft.
+            </p>
+
+            <p>
+              Tagsüber arbeite ich als Lernassistent an einer Grundschule in Hochheide.
+              In meiner Freizeit baue ich Websites, erstelle Content und
+              unterrichte Deutsch online – hauptsächlich für Menschen vom Balkan.
+            </p>
+
+            <p>
+              Warum? Weil ich die Brücke zwischen zwei Welten bin und
+              diese Position nutzen will, um anderen zu helfen.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Was ich kann</h2>
+
+        <div class="skills-grid stagger-children">
+          <!-- Languages -->
+          <div class="skill-category glass card">
+            <h3>🌍 Sprachen</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <span class="skill-name">Serbisch</span>
+                <span class="skill-level">Muttersprache</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Deutsch</span>
+                <span class="skill-level">Fließend (C2)</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Englisch</span>
+                <span class="skill-level">Fließend (C1)</span>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Spanisch</span>
+                <span class="skill-level">Konversation (B1)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="skill-category glass card">
+            <h3>💻 Tech Stack</h3>
+            <div class="tech-tags tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive Design</span>
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">AI Tools</span>
+              <span class="tag">Photoshop</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+
+          <!-- Soft Skills -->
+          <div class="skill-category glass card">
+            <h3>🧠 Soft Skills</h3>
+            <ul class="skill-list">
+              <li>Analytisches Denken</li>
+              <li>Direkte Kommunikation</li>
+              <li>Projektmanagement</li>
+              <li>Kundenbetreuung</li>
+              <li>Content Creation</li>
+              <li>Multitasking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="journey-section">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Meine Reise</h2>
+
+        <div class="timeline">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2000</span>
+              <h3>Geboren in Serbien</h3>
+              <p>Aufgewachsen mit Serbisch als Muttersprache</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2013</span>
+              <h3>Nach Deutschland gezogen</h3>
+              <p>Mit 13 Jahren nach Duisburg gekommen und Deutsch gelernt</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2020</span>
+              <h3>Web Development entdeckt</h3>
+              <p>Erste Projekte mit HTML, CSS und JavaScript</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2023</span>
+              <h3>LeonicAURA gegründet</h3>
+              <p>Start als Deutsch-Lehrer für Balkan-Community</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content glass">
+              <span class="timeline-date">2025</span>
+              <h3>Heute</h3>
+              <p>Web Developer, Content Creator & Sprachlehrer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section class="interests-section">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Was mich interessiert</h2>
+
+        <div class="interests-grid stagger-children">
+          <div class="interest-card glass card">
+            <div class="interest-icon">🎮</div>
+            <h3>Gaming</h3>
+            <p>Strategiespiele, Character Optimization</p>
+          </div>
+
+          <div class="interest-card glass card">
+            <div class="interest-icon">📚</div>
+            <h3>Lernen</h3>
+            <p>Neue Sprachen, Coding, AI, Geopolitik</p>
+          </div>
+
+          <div class="interest-card glass card">
+            <div class="interest-icon">📸</div>
+            <h3>Content Creation</h3>
+            <p>Fotografie, Video, Digital Art</p>
+          </div>
+
+          <div class="interest-card glass card">
+            <div class="interest-icon">🌍</div>
+            <h3>Social Impact</h3>
+            <p>Bildung, Klimaschutz, Community Building</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content glass animate-on-scroll">
+          <h2>Lass uns kennenlernen!</h2>
+          <p>
+            Hast du ein Projekt oder möchtest Deutsch lernen? Schreib mir!
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">
+              Kontaktiere mich
+            </a>
+            <a href="services.html" class="btn btn-secondary glass">
+              Meine Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-text">Leonic</a>
+          <p>Multilingual Digital Creator & Web Developer</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#language">Sprachtraining</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#content">Content Creation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="mailto:infoleonicaura@gmail.com">E-Mail</a></li>
+              <li><a href="https://wa.me/4917663005489">WhatsApp</a></li>
+              <li><a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    /* Story Section */
+    .about-story {
+      background: var(--bg-secondary);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .story-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: var(--space-3xl);
+      }
+    }
+
+    .story-image {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .story-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-lg);
+    }
+
+    .story-content p {
+      margin-bottom: var(--space-md);
+    }
+
+    /* Skills Section */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .skill-category {
+      padding: var(--space-xl);
+    }
+
+    .skill-category h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-lg);
+    }
+
+    .skill-items {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .skill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .skill-item:last-child {
+      border-bottom: none;
+    }
+
+    .skill-name {
+      font-weight: var(--fw-medium);
+    }
+
+    .skill-level {
+      color: var(--accent-purple-light);
+      font-size: var(--fs-small);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .skill-list li {
+      color: var(--text-secondary);
+      padding-left: var(--space-md);
+      position: relative;
+    }
+
+    .skill-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent-purple);
+    }
+
+    /* Timeline */
+    .journey-section {
+      background: var(--bg-secondary);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--gradient-primary);
+    }
+
+    @media (min-width: 768px) {
+      .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 60px;
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item {
+        padding-left: 0;
+        width: 50%;
+      }
+
+      .timeline-item:nth-child(odd) {
+        padding-right: 40px;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        margin-left: 50%;
+        padding-left: 40px;
+      }
+    }
+
+    .timeline-marker {
+      position: absolute;
+      left: 12px;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      background: var(--accent-purple);
+      border: 3px solid var(--bg-primary);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    @media (min-width: 768px) {
+      .timeline-item:nth-child(odd) .timeline-marker {
+        left: auto;
+        right: -9px;
+      }
+
+      .timeline-item:nth-child(even) .timeline-marker {
+        left: -9px;
+      }
+    }
+
+    .timeline-content {
+      padding: var(--space-lg);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--accent-cyan);
+      margin-bottom: var(--space-sm);
+    }
+
+    .timeline-content h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-sm);
+    }
+
+    .timeline-content p {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      margin: 0;
+    }
+
+    /* Interests */
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .interest-card {
+      text-align: center;
+      padding: var(--space-xl);
+    }
+
+    .interest-icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .interest-card h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-sm);
+    }
+
+    .interest-card p {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-tertiary);
+    }
+
+    .cta-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-content p {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-size: var(--fs-h1);
+      font-weight: var(--fw-bold);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: var(--space-4xl) 0 var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    .footer-brand .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--fw-bold);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      margin-top: var(--space-sm);
+      color: var(--text-muted);
+      font-size: var(--fs-small);
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .footer-column h4 {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-bottom p {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leon Erdeg - Multilingual Digital Creator, Web Developer & Deutsch-Lehrer aus Duisburg. Websites, Content Creation und Sprachunterricht.">
+  <meta name="keywords" content="Web Development, Deutsch lernen, Content Creation, Leon Erdeg, Duisburg, LeonicAURA">
+  <meta name="author" content="Leon Erdeg">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leonerdeg.github.io/leonicworld/">
+  <meta property="og:title" content="Leonic's World - Leon Erdeg Portfolio">
+  <meta property="og:description" content="Multilingual Digital Creator, Web Developer & Deutsch-Lehrer aus Duisburg">
+  <meta property="og:image" content="images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://leonerdeg.github.io/leonicworld/">
+  <meta name="twitter:title" content="Leonic's World - Leon Erdeg Portfolio">
+  <meta name="twitter:description" content="Multilingual Digital Creator, Web Developer & Deutsch-Lehrer aus Duisburg">
+  <meta name="twitter:image" content="images/twitter-card.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+  <title>Leonic's World - Leon Erdeg | Digital Creator & Web Developer</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <!-- Preload critical resources -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Welcome Animation Overlay -->
+  <div id="welcome-overlay" class="welcome-overlay">
+    <div class="welcome-content">
+      <p class="welcome-pre">Welcome to</p>
+      <h1 class="welcome-title">Leonic's World</h1>
+    </div>
+    <button class="skip-btn" aria-label="Animation überspringen">Überspringen</button>
+    <div class="welcome-progress"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Leonic</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="about.html" class="nav-link">Über mich</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">Über mich</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-background">
+        <div class="hero-gradient"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content glass animate-on-scroll">
+          <span class="hero-greeting">Hey, ich bin</span>
+          <h1 class="hero-title">Leon Erdeg</h1>
+          <p class="hero-subtitle gradient-text">
+            Multilingual Digital Creator & Web Developer
+          </p>
+          <p class="hero-tagline">
+            Ich baue Websites, erstelle Content und bringe dir Deutsch bei
+          </p>
+
+          <div class="hero-stats stats-grid">
+            <div class="stat-item animate-on-scroll">
+              <span class="stat-number" data-count="100" data-suffix="+">0</span>
+              <span class="stat-label">Stunden Unterricht</span>
+            </div>
+            <div class="stat-item animate-on-scroll">
+              <span class="stat-number" data-count="10" data-suffix="+">0</span>
+              <span class="stat-label">Websites gebaut</span>
+            </div>
+            <div class="stat-item animate-on-scroll">
+              <span class="stat-number" data-count="4">0</span>
+              <span class="stat-label">Sprachen</span>
+            </div>
+          </div>
+
+          <div class="hero-cta cta-buttons">
+            <a href="#about-preview" class="btn btn-primary">
+              Entdecke was ich mache
+            </a>
+            <a href="contact.html" class="btn btn-secondary glass">
+              Lass uns arbeiten
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="mouse"></div>
+      </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section id="about-preview" class="about-preview">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image glass animate-on-scroll animate-slide-left">
+            <img src="images/profile/leon-hero.jpg" alt="Leon Erdeg" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LE</span></div>'">
+          </div>
+
+          <div class="about-text animate-on-scroll animate-slide-right">
+            <h2 class="section-title" style="text-align: left;">Wer bin ich?</h2>
+            <p>
+              24 Jahre alt, aus Duisburg, spreche 4 Sprachen und liebe es, digitale Erlebnisse zu schaffen.
+            </p>
+            <p>
+              Von Deutsch-Unterricht bis Web-Development – ich mache das, was mich begeistert und anderen hilft.
+            </p>
+            <a href="about.html" class="link-arrow">
+              Mehr über mich →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Services Section -->
+    <section class="featured-services">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Was ich mache</h2>
+
+        <div class="services-grid stagger-children">
+          <!-- Service Card 1 -->
+          <div class="service-card glass card">
+            <div class="service-icon">🗣️</div>
+            <h3>Sprachtraining</h3>
+            <p>
+              Deutsch-Unterricht (A1-C1) für Lernende vom Balkan. Individuell, strukturiert, erfolgreich.
+            </p>
+            <a href="services.html#language" class="card-link link-arrow">
+              Mehr erfahren →
+            </a>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card glass card">
+            <div class="service-icon">💻</div>
+            <h3>Web Development</h3>
+            <p>
+              Responsive Websites, Landing Pages und Web-Apps. Modern, glassmorphisch, performant.
+            </p>
+            <a href="services.html#web" class="card-link link-arrow">
+              Mehr erfahren →
+            </a>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card glass card">
+            <div class="service-icon">🎨</div>
+            <h3>Content Creation</h3>
+            <p>
+              UGC Videos, AI-Bilder, Character Design. Kreativ, professionell, authentisch.
+            </p>
+            <a href="services.html#content" class="card-link link-arrow">
+              Mehr erfahren →
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-center animate-on-scroll">
+          <a href="services.html" class="btn btn-primary">
+            Alle Services ansehen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="featured-projects">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Projekte die ich gemacht habe</h2>
+
+        <div class="projects-grid stagger-children">
+          <!-- Project Card 1 -->
+          <article class="project-card glass card">
+            <div class="project-image">
+              <img src="images/projects/leonicaura-screenshot.jpg" alt="LeonicAURA Website" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>LA</span></div>'">
+              <div class="project-overlay">
+                <a href="https://leonicaura.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
+                  Live ansehen
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>LeonicAURA</h3>
+              <p>Professionelle Deutsch-Lehrplattform mit Buchungssystem</p>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card glass card">
+            <div class="project-image">
+              <img src="images/projects/project2.jpg" alt="Portfolio Website" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>P2</span></div>'">
+              <div class="project-overlay">
+                <a href="portfolio.html" class="btn btn-primary btn-small">
+                  Details ansehen
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Leonic's World</h3>
+              <p>Diese Portfolio-Website mit Glassmorphism Design</p>
+              <div class="tags">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Glassmorphism</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card glass card">
+            <div class="project-image">
+              <img src="images/projects/project3.jpg" alt="Content Creation" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>CC</span></div>'">
+              <div class="project-overlay">
+                <a href="portfolio.html#content" class="btn btn-primary btn-small">
+                  Portfolio ansehen
+                </a>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Content Portfolio</h3>
+              <p>UGC Videos und AI-generierte Kreationen</p>
+              <div class="tags">
+                <span class="tag">UGC</span>
+                <span class="tag">AI Art</span>
+                <span class="tag">Video</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="cta-center animate-on-scroll">
+          <a href="portfolio.html" class="btn btn-primary">
+            Alle Projekte ansehen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Latest Blog Posts Section -->
+    <section class="latest-blog">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Neueste Gedanken</h2>
+
+        <div id="blog-preview" class="blog-grid stagger-children">
+          <!-- Blog posts loaded dynamically via blog.js -->
+        </div>
+
+        <div class="cta-center animate-on-scroll">
+          <a href="blog.html" class="btn btn-primary">
+            Alle Posts lesen
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content glass animate-on-scroll">
+          <h2>Bereit zusammenzuarbeiten?</h2>
+          <p>
+            Lass uns dein nächstes Projekt zum Leben erwecken.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">
+              Kontaktiere mich
+            </a>
+            <a href="services.html" class="btn btn-secondary glass">
+              Services ansehen
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-text">Leonic</a>
+          <p>Multilingual Digital Creator & Web Developer</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#language">Sprachtraining</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#content">Content Creation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="mailto:infoleonicaura@gmail.com">E-Mail</a></li>
+              <li><a href="https://wa.me/4917663005489">WhatsApp</a></li>
+              <li><a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-social social-links">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-link glass" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="social-link glass" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener noreferrer" class="social-link glass" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/welcome.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/blog.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    /* Hero Section Styles */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: var(--space-5xl) 0;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-greeting {
+      display: block;
+      font-size: var(--fs-body);
+      color: var(--text-muted);
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: var(--fs-hero);
+      font-weight: var(--fw-bold);
+      margin-bottom: var(--space-md);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-medium);
+      margin-bottom: var(--space-sm);
+    }
+
+    .hero-tagline {
+      font-size: var(--fs-body);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .hero-stats {
+      margin-bottom: var(--space-2xl);
+    }
+
+    .hero-cta {
+      margin-top: var(--space-xl);
+    }
+
+    /* About Preview Styles */
+    .about-preview {
+      background: var(--bg-secondary);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3xl);
+      }
+    }
+
+    .about-image {
+      aspect-ratio: 1;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      margin-bottom: var(--space-lg);
+    }
+
+    .about-text p {
+      margin-bottom: var(--space-md);
+    }
+
+    .about-text .link-arrow {
+      margin-top: var(--space-lg);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    /* Blog Grid */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-secondary);
+    }
+
+    .cta-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-content p {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: var(--space-4xl) 0 var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr 1fr;
+      }
+    }
+
+    .footer-brand .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--fw-bold);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      margin-top: var(--space-sm);
+      color: var(--text-muted);
+      font-size: var(--fs-small);
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .footer-column h4 {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .footer-social {
+      justify-self: end;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-bottom p {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+    }
+
+    /* Loading & Empty States */
+    .loading-state,
+    .empty-state,
+    .error-state {
+      text-align: center;
+      padding: var(--space-3xl);
+      color: var(--text-muted);
+    }
+
+    .loading-spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid var(--glass-border);
+      border-top-color: var(--accent-purple);
+      border-radius: 50%;
+      margin: 0 auto var(--space-md);
+      animation: rotate 1s linear infinite;
+    }
+  </style>
+</body>
+</html>

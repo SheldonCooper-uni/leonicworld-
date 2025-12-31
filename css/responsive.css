@@ -1,0 +1,295 @@
+/* Responsive Styles - Mobile First */
+
+/* ====== SMALL DEVICES (PHONES) ====== */
+/* Base styles are mobile first - 320px+ */
+
+/* ====== MEDIUM DEVICES (TABLETS) ====== */
+@media (min-width: 768px) {
+  /* Typography */
+  h1 { font-size: var(--fs-h1); }
+  h2 { font-size: var(--fs-h2); }
+  h3 { font-size: var(--fs-h3); }
+
+  /* Sections */
+  section {
+    padding: var(--space-5xl) 0;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    padding: var(--space-3xl);
+  }
+
+  .hero-stats {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-3xl);
+  }
+
+  .hero-cta {
+    flex-direction: row;
+  }
+
+  /* About Grid */
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Projects Grid */
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Blog Grid */
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact Grid */
+  .contact-grid {
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-3xl);
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Interests Grid */
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Service Detail Layout */
+  .service-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3xl);
+    align-items: center;
+  }
+
+  .service-layout.reverse {
+    direction: rtl;
+  }
+
+  .service-layout.reverse > * {
+    direction: ltr;
+  }
+
+  /* Portfolio Grid */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ====== LARGE DEVICES (LAPTOPS) ====== */
+@media (min-width: 1024px) {
+  /* Navigation */
+  .nav-menu {
+    display: flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  /* Services Grid */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Projects Grid */
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Blog Grid */
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Skills Grid */
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Interests Grid */
+  .interests-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Portfolio Grid */
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ====== EXTRA LARGE DEVICES (LARGE DESKTOPS) ====== */
+@media (min-width: 1440px) {
+  /* Container */
+  .container {
+    max-width: 1400px;
+  }
+
+  /* Hero */
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  /* Sections */
+  section {
+    padding: var(--space-5xl) 0;
+  }
+}
+
+/* ====== PRINT STYLES ====== */
+@media print {
+  /* Hide navigation and interactive elements */
+  .navbar,
+  .back-to-top,
+  .mobile-menu,
+  .hamburger,
+  .welcome-overlay {
+    display: none !important;
+  }
+
+  /* Reset backgrounds */
+  body {
+    background: white;
+    color: black;
+  }
+
+  /* Adjust text colors */
+  h1, h2, h3, h4, h5, h6 {
+    color: black !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  p, li {
+    color: #333 !important;
+  }
+
+  /* Remove shadows and effects */
+  .glass,
+  .glass-card {
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  /* Show links */
+  a::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    color: #666;
+  }
+}
+
+/* ====== HIGH CONTRAST MODE ====== */
+@media (prefers-contrast: high) {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --text-secondary: #e2e8f0;
+    --text-muted: #cbd5e1;
+  }
+}
+
+/* ====== LANDSCAPE PHONES ====== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding: var(--space-3xl) 0;
+  }
+
+  .welcome-overlay {
+    padding: var(--space-xl);
+  }
+
+  .welcome-title {
+    font-size: 3rem;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* ====== TOUCH DEVICES ====== */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects that don't work well on touch */
+  .card:hover,
+  .service-card:hover,
+  .project-card:hover,
+  .blog-card:hover {
+    transform: none;
+  }
+
+  /* Make tap targets larger */
+  .nav-link,
+  .btn,
+  .filter-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* ====== SPECIFIC BREAKPOINT OVERRIDES ====== */
+
+/* Very small phones (320px - 374px) */
+@media (max-width: 374px) {
+  :root {
+    --container-padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .btn {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--fs-small);
+  }
+
+  .price-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small phones (375px - 424px) */
+@media (min-width: 375px) and (max-width: 424px) {
+  .hero-title {
+    font-size: 2.25rem;
+  }
+}
+
+/* Large phones (425px - 767px) */
+@media (min-width: 425px) and (max-width: 767px) {
+  .hero-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Tablet Portrait (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-content {
+    max-width: 600px;
+  }
+}

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Leon Erdeg's Services: Deutsch-Unterricht, Web Development, Content Creation und mehr.">
+  <meta name="author" content="Leon Erdeg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services | Leonic's World">
+  <meta property="og:description" content="Sprachtraining, Web Development, Content Creation - Meine Dienstleistungen">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>L</text></svg>">
+
+  <title>Services | Leonic's World</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/glassmorphism.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Zum Hauptinhalt springen</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-text">Leonic</span>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">Über mich</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">Über mich</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+  </div>
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+
+  <main id="main-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title animate-on-scroll">Meine Dienstleistungen</h1>
+        <p class="page-subtitle animate-on-scroll">
+          Von Sprachtraining bis Web-Development
+        </p>
+      </div>
+    </section>
+
+    <!-- Service 1: Language Training -->
+    <section id="language" class="service-detail">
+      <div class="container">
+        <div class="service-layout">
+          <div class="service-info animate-on-scroll animate-slide-left">
+            <div class="service-header">
+              <span class="service-emoji">🗣️</span>
+              <h2>Sprachtraining</h2>
+            </div>
+            <h3>Deutsch lernen mit System</h3>
+
+            <p>
+              Ich unterrichte Deutsch (A1-C1) für Lernende vom Balkan.
+              Mein Unterricht ist individuell, strukturiert und
+              auf deine Ziele angepasst.
+            </p>
+
+            <h4>Was du bekommst:</h4>
+            <ul class="feature-list">
+              <li>60-Minuten Einzelunterricht via Zoom/Google Meet</li>
+              <li>Individuelles Tempo und Fokus</li>
+              <li>Materialien und Hausaufgaben inklusive</li>
+              <li>Erklärungen in deiner Muttersprache (SR/HR/BS/MK)</li>
+              <li>Flexible Terminplanung</li>
+            </ul>
+
+            <h4>Preise:</h4>
+            <div class="price-cards">
+              <div class="price-card glass">
+                <span class="price">16€</span>
+                <span class="period">/Stunde</span>
+                <p>Probestunde</p>
+              </div>
+              <div class="price-card glass featured">
+                <span class="price">13€</span>
+                <span class="period">/Stunde</span>
+                <p>Ab 5 Stunden</p>
+              </div>
+              <div class="price-card glass">
+                <span class="price">10€</span>
+                <span class="period">/Stunde</span>
+                <p>Ab 10 Stunden</p>
+              </div>
+            </div>
+
+            <div class="service-cta">
+              <a href="https://leonicaura.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Zur LeonicAURA Website
+              </a>
+              <a href="contact.html" class="btn btn-secondary glass">
+                Probestunde buchen
+              </a>
+            </div>
+          </div>
+
+          <div class="service-visual glass animate-on-scroll animate-slide-right">
+            <img src="images/services/language-training.jpg" alt="Deutsch lernen" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>🗣️</span></div>'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 2: Web Development -->
+    <section id="web" class="service-detail alt-bg">
+      <div class="container">
+        <div class="service-layout reverse">
+          <div class="service-visual glass animate-on-scroll animate-slide-left">
+            <img src="images/services/web-dev.jpg" alt="Web Development" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>💻</span></div>'">
+          </div>
+
+          <div class="service-info animate-on-scroll animate-slide-right">
+            <div class="service-header">
+              <span class="service-emoji">💻</span>
+              <h2>Web Development</h2>
+            </div>
+            <h3>Websites die begeistern</h3>
+
+            <p>
+              Ich entwickle moderne, responsive Websites die nicht nur
+              gut aussehen, sondern auch funktionieren.
+            </p>
+
+            <h4>Was ich mache:</h4>
+            <ul class="feature-list">
+              <li>Landing Pages & Portfolio-Seiten</li>
+              <li>Business Websites mit Buchungssystemen</li>
+              <li>Interaktive Web-Anwendungen</li>
+              <li>Responsive Design (Mobile-First)</li>
+              <li>Moderne Animationen & Effekte</li>
+              <li>GitHub Pages Hosting</li>
+            </ul>
+
+            <h4>Technologien:</h4>
+            <div class="tech-tags tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Glassmorphism</span>
+              <span class="tag">Animations</span>
+            </div>
+
+            <div class="service-cta">
+              <a href="portfolio.html" class="btn btn-primary">
+                Projekte ansehen
+              </a>
+              <a href="contact.html" class="btn btn-secondary glass">
+                Projekt anfragen
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 3: Content Creation -->
+    <section id="content" class="service-detail">
+      <div class="container">
+        <div class="service-layout">
+          <div class="service-info animate-on-scroll animate-slide-left">
+            <div class="service-header">
+              <span class="service-emoji">🎨</span>
+              <h2>Content Creation</h2>
+            </div>
+            <h3>Kreative Inhalte die auffallen</h3>
+
+            <p>
+              Von UGC Videos bis AI-generierte Bilder –
+              ich erstelle Content der deine Message transportiert.
+            </p>
+
+            <h4>Was ich anbiete:</h4>
+            <ul class="feature-list">
+              <li>UGC Videos für Produkte & Services</li>
+              <li>AI-generierte Bilder & Grafiken</li>
+              <li>Character Design & Illustrations</li>
+              <li>Social Media Content</li>
+              <li>Professionelle Fotografie</li>
+            </ul>
+
+            <div class="service-cta">
+              <a href="portfolio.html#content" class="btn btn-primary">
+                Beispiele ansehen
+              </a>
+              <a href="contact.html" class="btn btn-secondary glass">
+                Anfrage senden
+              </a>
+            </div>
+          </div>
+
+          <div class="service-visual glass animate-on-scroll animate-slide-right">
+            <img src="images/services/content-creation.jpg" alt="Content Creation" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>🎨</span></div>'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service 4: Digital Products -->
+    <section id="products" class="service-detail alt-bg">
+      <div class="container">
+        <div class="service-layout reverse">
+          <div class="service-visual glass animate-on-scroll animate-slide-left">
+            <img src="images/services/digital-products.jpg" alt="Digital Products" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><span>📦</span></div>'">
+          </div>
+
+          <div class="service-info animate-on-scroll animate-slide-right">
+            <div class="service-header">
+              <span class="service-emoji">📦</span>
+              <h2>Digitale Produkte</h2>
+            </div>
+            <h3>Lernmaterialien & Tools</h3>
+
+            <p>
+              Ich erstelle digitale Produkte die Menschen beim Lernen helfen.
+            </p>
+
+            <h4>Was ich erstelle:</h4>
+            <ul class="feature-list">
+              <li>PDF Lernmaterialien (Verben, Vokabeln, Grammatik)</li>
+              <li>Interaktive HTML Lern-Apps</li>
+              <li>Flashcard Systeme</li>
+              <li>Workbooks & Übungshefte</li>
+              <li>Custom Learning Tools</li>
+            </ul>
+
+            <p class="coming-soon">
+              <strong>Coming soon:</strong> Shop für digitale Produkte
+            </p>
+
+            <div class="service-cta">
+              <a href="contact.html" class="btn btn-primary">
+                Custom Produkt anfragen
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Services -->
+    <section class="other-services">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">Weitere Services</h2>
+
+        <div class="services-grid stagger-children">
+          <div class="service-card glass card">
+            <div class="service-icon">✍️</div>
+            <h3>Texte & Übersetzungen</h3>
+            <p>E-Mails, Briefe, Übersetzungen DE↔SR/HR/BS/MK</p>
+          </div>
+
+          <div class="service-card glass card">
+            <div class="service-icon">🎭</div>
+            <h3>Character Design</h3>
+            <p>Custom Charaktere für Spiele, Projekte, Avatare</p>
+          </div>
+
+          <div class="service-card glass card">
+            <div class="service-icon">📊</div>
+            <h3>Consulting</h3>
+            <p>Beratung zu Online-Business, Content-Strategie</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content glass animate-on-scroll">
+          <h2>Nicht sicher, was du brauchst?</h2>
+          <p>
+            Schreib mir und wir finden gemeinsam die beste Lösung für dich.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">
+              Kostenloses Gespräch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="index.html" class="logo-text">Leonic</a>
+          <p>Multilingual Digital Creator & Web Developer</p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Navigation</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">Über mich</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#language">Sprachtraining</a></li>
+              <li><a href="services.html#web">Web Development</a></li>
+              <li><a href="services.html#content">Content Creation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Kontakt</h4>
+            <ul>
+              <li><a href="mailto:infoleonicaura@gmail.com">E-Mail</a></li>
+              <li><a href="https://wa.me/4917663005489">WhatsApp</a></li>
+              <li><a href="https://instagram.com/aicreativebitch" target="_blank" rel="noopener">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Leon Erdeg. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Nach oben scrollen">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script src="js/utils.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+
+  <style>
+    /* Service Detail Sections */
+    .service-detail {
+      padding: var(--space-5xl) 0;
+    }
+
+    .service-detail.alt-bg {
+      background: var(--bg-secondary);
+    }
+
+    .service-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-3xl);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .service-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service-layout.reverse {
+        direction: rtl;
+      }
+
+      .service-layout.reverse > * {
+        direction: ltr;
+      }
+    }
+
+    .service-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-md);
+    }
+
+    .service-emoji {
+      font-size: 2.5rem;
+    }
+
+    .service-info h2 {
+      font-size: var(--fs-h2);
+      margin: 0;
+    }
+
+    .service-info h3 {
+      font-size: var(--fs-h4);
+      color: var(--accent-purple-light);
+      margin-bottom: var(--space-lg);
+    }
+
+    .service-info h4 {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-semibold);
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .feature-list li {
+      color: var(--text-secondary);
+      padding-left: var(--space-lg);
+      position: relative;
+    }
+
+    .feature-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-cyan);
+    }
+
+    .service-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+
+    .service-visual {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+    }
+
+    .service-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Price Cards */
+    .price-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    @media (max-width: 600px) {
+      .price-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .price-card {
+      text-align: center;
+      padding: var(--space-lg);
+      transition: transform var(--transition-normal);
+    }
+
+    .price-card.featured {
+      border-color: var(--accent-purple);
+      transform: scale(1.05);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .price-card.featured:hover {
+      transform: scale(1.05) translateY(-5px);
+    }
+
+    .price-card .price {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+      color: var(--accent-purple-light);
+    }
+
+    .price-card .period {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+
+    .price-card p {
+      margin-top: var(--space-sm);
+      font-size: var(--fs-small);
+      color: var(--text-secondary);
+    }
+
+    .coming-soon {
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      background: var(--glass-bg);
+      border-radius: var(--radius-md);
+      font-size: var(--fs-small);
+    }
+
+    /* Other Services Grid */
+    .other-services {
+      background: var(--bg-tertiary);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .service-card {
+      text-align: center;
+      padding: var(--space-xl);
+    }
+
+    .service-card .service-icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .service-card h3 {
+      font-size: var(--fs-h4);
+      margin-bottom: var(--space-sm);
+    }
+
+    .service-card p {
+      color: var(--text-secondary);
+      font-size: var(--fs-small);
+      margin: 0;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: var(--bg-secondary);
+    }
+
+    .cta-content {
+      text-align: center;
+      padding: var(--space-3xl);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: var(--fs-h2);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-content p {
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Image Placeholder */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-primary);
+      color: var(--text-primary);
+      font-size: 4rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: var(--space-4xl) 0 var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: 1.5fr 2fr;
+      }
+    }
+
+    .footer-brand .logo-text {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: var(--fw-bold);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand p {
+      margin-top: var(--space-sm);
+      color: var(--text-muted);
+      font-size: var(--fs-small);
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: var(--space-xl);
+    }
+
+    .footer-column h4 {
+      font-size: var(--fs-small);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-md);
+    }
+
+    .footer-column ul li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-column ul li a {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-column ul li a:hover {
+      color: var(--accent-purple-light);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .footer-bottom p {
+      font-size: var(--fs-small);
+      color: var(--text-muted);
+    }
+  </style>
+</body>
+</html>
