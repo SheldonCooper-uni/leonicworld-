@@ -20,11 +20,11 @@ class StarfieldLoader {
     this.skipBtn = document.querySelector('.loader-skip');
     this.progress = document.querySelector('.loader-progress');
 
-    // Konfiguration
+    // Konfiguration - Längere, cinematische Animation
     this.config = {
-      maxDuration: 2500,        // Graceful fallback nach 2.5s
-      minDisplayTime: 800,      // Mindestanzeigezeit für gute UX
-      fadeOutDuration: 400,     // Fade-out Zeit
+      maxDuration: 3500,        // Graceful fallback nach 3.5s (mehr Zeit für cinematic feel)
+      minDisplayTime: 2800,     // Mindestanzeigezeit - lässt Animation wirken
+      fadeOutDuration: 600,     // Smooth crossfade statt hard cut
       starCount: 100,           // Anzahl der Sterne
       starSpeed: 0.3            // Sternengeschwindigkeit
     };
@@ -78,18 +78,35 @@ class StarfieldLoader {
 
   /**
    * Prüft ob Animation übersprungen werden soll
+   * Zeigt Animation nur 1x pro Tag (localStorage-basiert)
    */
   shouldSkip() {
-    // Session-basierter Skip (für schnelle Navigationen)
-    const skipData = sessionStorage.getItem('loaderShown');
-    if (skipData) {
-      return true;
-    }
-
-    // URL Parameter
+    // URL Parameter für Debugging/Testing
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('skip') === 'true') {
       return true;
+    }
+
+    // Force-Show für Testing
+    if (urlParams.get('intro') === 'true') {
+      return false;
+    }
+
+    // Session-basierter Skip (für schnelle Navigation innerhalb einer Session)
+    const sessionSkip = sessionStorage.getItem('loaderShown');
+    if (sessionSkip) {
+      return true;
+    }
+
+    // localStorage: Animation nur 1x pro Tag zeigen
+    const lastShown = localStorage.getItem('loaderLastShown');
+    if (lastShown) {
+      const lastDate = new Date(parseInt(lastShown));
+      const now = new Date();
+      // Prüfe ob gleicher Tag
+      if (lastDate.toDateString() === now.toDateString()) {
+        return true;
+      }
     }
 
     return false;
@@ -282,8 +299,9 @@ class StarfieldLoader {
     if (this.state.isComplete || this.state.isSkipped) return;
     this.state.isSkipped = true;
 
-    // Session markieren (für schnelle Navigation)
+    // Session + Daily markieren
     sessionStorage.setItem('loaderShown', 'true');
+    localStorage.setItem('loaderLastShown', Date.now().toString());
 
     this.complete();
   }
@@ -295,8 +313,9 @@ class StarfieldLoader {
     if (this.state.isComplete) return;
     this.state.isComplete = true;
 
-    // Session markieren
+    // Session + Daily markieren
     sessionStorage.setItem('loaderShown', 'true');
+    localStorage.setItem('loaderLastShown', Date.now().toString());
 
     // Animation stoppen
     if (this.animationId) {
